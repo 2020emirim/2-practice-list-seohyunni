@@ -11,4 +11,5 @@
 - urls bookmark:list
 - views BookmarkList
 - templates bookmark_list.html
-- 
+- views BookmarkCreateView
+
