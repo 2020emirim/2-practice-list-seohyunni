@@ -18,3 +18,4 @@ class BookmarkCreateView(CreateView):  # bookmark_form.html
 
 class BookmarkDetailView(DetailView):
     model = Bookmark
+
