@@ -3,29 +3,29 @@
     <title>Bookmark List</title>
 </head>
 <body>
-    <a href="{% url 'bookmark:add' %}">Add Bookmark</a>
-    <p></p>
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Site</th>
-            <th>URL</th>
-            <th>Modify</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for bookmark in bookmark_list %}
+<a href="{% url 'bookmark:add' %}">Add Bookmark</a>
+<p></p>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Site</th>
+        <th>URL</th>
+        <th>Modify</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for bookmark in bookmark_list %}
         <tr>
             <td>{{ forloop.counter }}</td>
             <td><a href="#{% url 'bookmark:detail' pk=bookmark.id %}">{{ bookmark.site_name }}</a></td>
             <td><a href="{{ bookmark.url }}">{{ bookmark.url }}</a></td>
-            <td><a href="{%  url 'bookmark:update' pk=bookmark.id %}">Modify</a></td>
-            <td><a href="#">Delete</a></td>
+            <td><a href="{% url 'bookmark:update' pk=bookmark.id %}">Modify</a></td>
+            <td><a href="{% url 'bookmark:delete' pk=bookmark.id %}">Delete</a></td>
         </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>
